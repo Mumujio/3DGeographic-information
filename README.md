@@ -1,4 +1,8 @@
-# iteach
+# 3DGeographic-information
+
+## 技术栈
+* vue3+threejs+vue-router
+
 
 ## Project setup
 ```
