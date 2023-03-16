@@ -3,6 +3,7 @@
   <canvas ref="webgl"></canvas>
   <backGround
     :newSection="option.newSection"
+    :threeInstance="three.experience"
     v-if="option.isScrollBgr"
   ></backGround>
 </template>
@@ -11,7 +12,7 @@
 import SouthAmericaTHREE from "./southAmericaTHREE/Experience";
 import { reactive, ref, onMounted, onBeforeUnmount } from "vue";
 import loaded from "@/components/loaded.vue";
-import backGround from "@/components/scrollBackground.vue";
+import backGround from "@/components/area_background/southAmerica_bg.vue";
 const webgl = ref(null);
 const option = reactive({
   newSection: 0,
@@ -24,7 +25,7 @@ const isScrollBgr = (sign) => {
   option.isScrollBgr = sign;
 };
 
-const three = {};
+const three = reactive({});
 onMounted(() => {
   // 需要在dom都渲染之后再将获取的dom传进去，不然webgl.value的canvas画布为空
   three.experience = new SouthAmericaTHREE(webgl.value);
@@ -34,6 +35,8 @@ onMounted(() => {
   three.experience.scroll.on("scroll", (newSection) => {
     option.newSection = newSection;
   });
+
+  console.log();
 });
 onBeforeUnmount(() => {
   console.log("从副页离开");

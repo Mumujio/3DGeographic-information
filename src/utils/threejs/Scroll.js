@@ -9,7 +9,10 @@ export default class Scroll extends EventEmitter {
         
         addEventListener('scroll', () => {
             this.scrollContent.scrollY = window.scrollY
-            this.trigger('scroll',[this.newSection])
+            this.trigger('scroll', [this.newSection])
+            
+        
         })
+
     }
 }

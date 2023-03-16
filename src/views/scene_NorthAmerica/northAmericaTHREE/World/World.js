@@ -39,6 +39,7 @@ export default class World {
       this.scrollY = this.experience.scroll.scrollContent.scrollY;
       this.camera.position.y =
         (-this.scrollY / this.sizes.height) * this.objectsDistance;
+
       this.experience.scroll.newSection = Math.round(
         this.scrollY / this.sizes.height
       );

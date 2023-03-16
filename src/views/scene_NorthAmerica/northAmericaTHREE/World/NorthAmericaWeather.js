@@ -8,8 +8,13 @@ export default class NorthAmericaWeather {
   }
   setModel() {
     this.model = this.resources.items["NorthAmericaWeatherModedl"];
+    
     this.model.scene.scale.set(0.2,0.2,0.2)
     this.model.scene.rotation.x = Math.PI / 5;
+
+
+     
+  
     this.scene.add(this.model.scene);
   }
 }

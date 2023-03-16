@@ -8,9 +8,11 @@ export default class SouthAmericaTerrain{
     }
     setModel() {
         this.model = this.resources.items['SouthAmericaTerrainModel']
-        this.model.scene.rotation.x = Math.PI / 5
-        this.model.scene.scale.set(2, 2, 2)
-        this.model.scene.position.x = 2
+        this.model.scene.rotation.x = Math.PI /4
+        this.model.scene.scale.set(2.5, 2.5, 2.5)
+        this.model.scene.position.x = 2.5
+    
+        // this.model.scene.position.y = 20
         this.scene.add(this.model.scene)
     }
 }
