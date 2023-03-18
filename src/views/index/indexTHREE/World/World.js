@@ -13,8 +13,8 @@ export default class World {
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
-    const help = new THREE.AxesHelper(5);
-    this.scene.add(help);
+    // const help = new THREE.AxesHelper(5);
+    // this.scene.add(help);
 
     // Wait for resources
     this.experience.resources.on("sourceReady", () => {

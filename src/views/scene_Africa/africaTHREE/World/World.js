@@ -39,6 +39,7 @@ export default class World {
       this.experience.scroll.newSection = Math.round(
         this.scrollY / this.sizes.height
       );
+
     });
   }
 }

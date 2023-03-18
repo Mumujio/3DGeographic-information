@@ -7,6 +7,8 @@ import './assets/common.css'
 import Antd from 'ant-design-vue';
 // import '@/utils/rem.js'
 import 'ant-design-vue/dist/antd.css';
+
+
 import '@/utils/rem'
 
 
