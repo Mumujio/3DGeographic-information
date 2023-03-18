@@ -1,8 +1,23 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+  font-family: "NotoSansHans";
+  src: url("../../public/static/font/NotoSansHans/NotoSansHans-Regular.otf")
+      format("opentype"),
+    url("../../public/static/font/NotoSansHans/NotoSansHans-Black.otf")
+      format("opentype"),
+    url("../../public/static/font/NotoSansHans/NotoSansHans-Bold.otf")
+      format("opentype"),
+    url("../../public/static/font/NotoSansHans/NotoSansHans-DemiLight.otf")
+      format("opentype"),
+    url("../../public/static/font/NotoSansHans/NotoSansHans-Thin-Windows.otf")
+      format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  /* unicode-range: U+000-5FF */
 }
-body{
-    height: auto !important;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "NotoSansHans";
 }

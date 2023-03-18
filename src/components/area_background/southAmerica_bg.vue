@@ -1,15 +1,4 @@
 <template>
-  <!-- <div id="fullpage">
-    <div class="section section1">
-      <h1>Section 1</h1>
-    </div>
-    <div class="section section2">
-      <h1>Section 2</h1>
-    </div>
-    <div class="section section3">
-      <h1>Section 3</h1>
-    </div>
-  </div> -->
   <div class="scrollBackground">
     <section class="section section1">
       <div
@@ -151,8 +140,8 @@
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
 import { tag, labelRenderer, tagtest } from "@/utils/threejs/label/tag2D.js";
-// import fullpage from "fullpage.js";
 import { PlusCircleOutlined } from "@ant-design/icons-vue";
+// import fullpage from "fullpage.js";
 
 const props = defineProps({
   newSection: 0,
@@ -172,7 +161,7 @@ const hideen_flag = reactive({
   section3: true,
   terrain: false,
   weather: true,
-  alligator: false,
+  alligator: true,
 });
 function testClick() {
   visible.value = true;

@@ -3,6 +3,7 @@
   <canvas ref="webgl"></canvas>
   <backGround
     :newSection="option.newSection"
+    :threeInstance="option.threeInstance"
     v-if="option.isScrollBgr"
   ></backGround>
 </template>
@@ -18,6 +19,7 @@ const option = reactive({
   // 加载进度
   progress: 0,
   isScrollBgr: false,
+  threeInstance: {},
 });
 
 const isScrollBgr = (sign) => {
@@ -28,6 +30,7 @@ const three = {};
 onMounted(() => {
   // 需要在dom都渲染之后再将获取的dom传进去，不然webgl.value的canvas画布为空
   three.experience = new Asia(webgl.value);
+  option.threeInstance = three.experience;
   three.experience.resources.on("sourceOnReady", (loadProgress) => {
     option.progress = loadProgress;
   });

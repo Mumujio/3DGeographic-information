@@ -6,26 +6,6 @@
     :threeInstance="option.threeInstance"
     v-if="option.isScrollBgr"
   ></backGround>
-  <!-- <div id="fullpage">
-    <div
-      class="section section1"
-      :class="{ 'active-section': option.newSection === 0 }"
-    >
-      <h1>Section 1</h1>
-    </div>
-    <div
-      class="section section2"
-      :class="{ 'active-section': option.newSection === 1 }"
-    >
-      <h1>Section 2</h1>
-    </div>
-    <div
-      class="section section3"
-      :class="{ 'active-section': option.newSection === 2 }"
-    >
-      <h1>Section 3</h1>
-    </div>
-  </div> -->
 </template>
 
 <script setup>

@@ -1,15 +1,4 @@
 <template>
-  <!-- <div id="fullpage">
-    <div class="section section1">
-      <h1>Section 1</h1>
-    </div>
-    <div class="section section2">
-      <h1>Section 2</h1>
-    </div>
-    <div class="section section3">
-      <h1>Section 3</h1>
-    </div>
-  </div> -->
   <div class="scrollBackground">
     <section class="section section1">
       <div
@@ -24,9 +13,6 @@
         </p>
       </div>
       <div class="cover"></div>
-      <!-- <div class="event-view">
-        <a-space><PlusCircleOutlined /></a-space>fwefewfefwe
-      </div> -->
       <img
         src="@/assets/img/logo.png"
         alt=""
