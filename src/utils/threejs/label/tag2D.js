@@ -36,8 +36,6 @@ export function labelRenderer(container) {
 export function tagtest(dom) {
 
     let label = new CSS2DObject(dom);
-
-    label.position.set(0,0,0)
     // 设置HTML元素标签在three.js世界坐标中位置
     label.layers.set(0)
     return label;//返回CSS2模型标签      

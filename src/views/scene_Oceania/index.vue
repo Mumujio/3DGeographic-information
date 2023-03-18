@@ -4,6 +4,7 @@
   <backGround
     :newSection="option.newSection"
     v-if="option.isScrollBgr"
+    :threeInstance="option.threeInstance"
   ></backGround>
 </template>
 
@@ -11,7 +12,7 @@
 import Oceania from "./oceaniaTHREE/Experience";
 import { reactive, ref, onMounted, onBeforeUnmount } from "vue";
 import loaded from "@/components/loaded.vue";
-import backGround from "@/components/scrollBackground.vue";
+import backGround from "@/components/area_background/oceania._bg.vue";
 const webgl = ref(null);
 const option = reactive({
   newSection: 0,
@@ -28,6 +29,8 @@ const three = {};
 onMounted(() => {
   // 需要在dom都渲染之后再将获取的dom传进去，不然webgl.value的canvas画布为空
   three.experience = new Oceania(webgl.value);
+  option.threeInstance = three.experience;
+
   three.experience.resources.on("sourceOnReady", (loadProgress) => {
     option.progress = loadProgress;
   });
