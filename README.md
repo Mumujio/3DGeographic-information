@@ -1,4 +1,9 @@
-# iteach
+# 3DGeographic-information
+* 3D地理信息教学项目
+
+## 技术栈
+* vue3+threejs+vue-router
+
 
 ## Project setup
 ```
