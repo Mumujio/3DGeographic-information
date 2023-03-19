@@ -3,6 +3,7 @@
   <canvas ref="webgl"></canvas>
   <backGround
     :newSection="option.newSection"
+    :threeInstance="three.experience"
     v-if="option.isScrollBgr"
   ></backGround>
 </template>
@@ -11,7 +12,7 @@
 import Africa from "./africaTHREE/Experience";
 import { reactive, ref, onMounted, onBeforeUnmount } from "vue";
 import loaded from "@/components/loaded.vue";
-import backGround from "@/components/scrollBackground.vue";
+import backGround from "@/components/area_background/africa_bg.vue";
 const webgl = ref(null);
 const option = reactive({
   newSection: 0,

@@ -9,8 +9,9 @@ export default class AntarcticaWeather{
     }
     setModel() {
         this.model = this.resources.items['AntarcticaWeatherModel']
-        this.model.scene.scale.set(0.5, 0.5, 0.5)
-        this.model.scene.rotation.x = Math.PI/5
+        this.model.scene.scale.set(0.35, 0.35, 0.35)
+        this.model.scene.rotation.x = Math.PI / 3.5
+        this.model.scene.position.x=0.4
         this.scene.add(this.model.scene)
     }
 }

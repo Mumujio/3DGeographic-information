@@ -21,3 +21,7 @@
   box-sizing: border-box;
   font-family: "NotoSansHans";
 }
+
+#app{
+  overflow-x: hidden;
+}

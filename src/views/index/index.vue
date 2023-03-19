@@ -104,9 +104,12 @@ canvas {
     height: 100%;
   }
   .text {
-    color: #2e2604;
-    font-size: 0.18rem;
-    font-weight: 600;
+    text-align: left;
+    vertical-align: bottom;
+    font-size: 28px;
+    font-weight: 400;
+    color: rgba(79, 55, 30, 1);
+
     width: 60%;
     padding-left: 0.2rem;
   }
@@ -115,9 +118,9 @@ canvas {
 .goIndex {
   position: absolute;
 
-  right: 1%;
-  top: 0;
-  font-size: 0.4rem;
+  right: 2%;
+  top: 2%;
+
   color: white;
   z-index: 1;
   cursor: pointer;
@@ -128,7 +131,8 @@ canvas {
   top: 4%;
   right: 4%;
   color: rgba(166, 166, 166, 1);
+  /** 文本2 */
+  font-size: 36px;
   font-weight: 500;
-  font-size: 0.2rem;
 }
 </style>

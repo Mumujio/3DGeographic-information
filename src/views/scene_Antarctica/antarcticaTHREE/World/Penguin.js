@@ -10,5 +10,6 @@ export default class Penguin{
     setModel() {
         this.model = this.resources.items['penguinModel']
         this.scene.add(this.model.scene)
+        // this.model.scene.scale.set(2.5, 2.5, 2.5)
     }
 }

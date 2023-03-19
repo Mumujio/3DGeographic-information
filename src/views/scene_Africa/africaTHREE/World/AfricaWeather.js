@@ -10,7 +10,9 @@ export default class AfricaWeather{
     }
     setModel() {
         this.model = this.resources.items['AfricaWeatherModel']
-        this.model.scene.rotation.x  = Math.PI/5
+        this.model.scene.rotation.x = Math.PI / 3.5
+        this.model.scene.scale.set(0.7, 0.7, 0.7)
+        this.model.scene.position.x = 0.7
         this.scene.add(this.model.scene)
     }
 }

@@ -1,9 +1,9 @@
 <template>
   <div class="progress" v-if="isShow">
     <div class="title">
-      <h1>地理信息科普</h1>
+      <h1>地理信息3D科普平台</h1>
       <div class="titleText">
-        Geographic information teaching and popularization
+        Geographic information 3D science popularization platform
       </div>
     </div>
     <div class="center">
@@ -21,7 +21,7 @@
         <div class="text1" v-else-if="progress == 100" @click="changeShow">
           Start
         </div>
-        <div class="text2">3D auxiliary teaching system</div>
+        <div class="text2">3D Science Popularization Platform</div>
       </div>
     </div>
   </div>
@@ -60,10 +60,14 @@ function changeShow() {
     width: 40%;
     opacity: 0.8;
     h1 {
-      font-size: 0.44rem;
+      font-size: 80px;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 1);
     }
     .titleText {
-      font-size: 0.15rem;
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(0, 0, 0, 1);
     }
   }
   .center {
@@ -114,8 +118,8 @@ function changeShow() {
       justify-content: flex-start;
 
       .text1 {
-        font-size: 0.5rem;
-        font-weight: 400;
+        font-size: 72px;
+        font-weight: 500;
         color: black;
         cursor: pointer;
         z-index: 999;
@@ -126,7 +130,8 @@ function changeShow() {
       }
       .text2 {
         color: black;
-        font-size: 0.15rem;
+        font-size: 36px;
+        font-weight: 500;
       }
     }
   }
