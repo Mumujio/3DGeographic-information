@@ -177,7 +177,7 @@ function click_label(flag) {
   // 区分点击来源
   if (flag == "t-1") {
     // 撒哈拉沙漠
-    modal_data.img = "./static/img/logo.png";
+    modal_data.img = "./static/img/africa/t-1.jpg";
     modal_data.name = "撒哈拉沙漠";
     modal_data.text = "这是撒哈拉沙漠";
   } else if (flag == "t-2") {

@@ -19,6 +19,7 @@
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
+    <img src="@/assets/img/sceneClick/SouthAmerica.png" alt="" />
   </section>
   <section class="scene" v-if="clickScene == '北美洲001'">
     <h2>北美洲</h2>
@@ -29,6 +30,7 @@
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
+    <img src="@/assets/img/sceneClick/NorthAmerica.png" alt="" />
   </section>
   <section class="scene" v-if="clickScene == '非洲001'">
     <h2>非洲</h2>
@@ -50,6 +52,7 @@
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
+    <img src="@/assets/img/sceneClick/Asia.png" alt="" />
   </section>
   <section class="scene" v-if="clickScene == '大洋洲001'">
     <h2>大洋洲</h2>
@@ -60,6 +63,7 @@
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
+    <img src="@/assets/img/sceneClick/Oceania.png" alt="" />
   </section>
   <section class="scene" v-if="clickScene == '欧洲001'">
     <h2>欧洲</h2>
@@ -70,6 +74,7 @@
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
+    <img src="@/assets/img/sceneClick/Europe.png" alt="" />
   </section>
 </template>
 
@@ -106,6 +111,10 @@ const router = useRouter();
   }
   &-btn {
     margin: 10px 0;
+  }
+  img {
+    // max-height: 600px;
+    max-width: 500px;
   }
 }
 </style>

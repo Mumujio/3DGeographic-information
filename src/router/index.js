@@ -1,10 +1,15 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
-    path: '/',
+    path: '/index',
     name: 'index',
     component:()=>import ('@/views/index/index.vue')
   },
+  {
+    path: '/',
+    redirect:"/index"
+  },
+
   {
     path: '/scene/antarctica',
     name: 'antarctica',
@@ -42,11 +47,17 @@ const routes = [
     path: '/scene/europe',
     name: 'europe',
     component:()=>import ('@/views/scene_Europe/index.vue')
+  },
+  {
+    path: '/scene/numberWord',
+    name: 'numberWord',
+    component:()=>import ('@/views/number_world/index.vue')
   }
+
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) { 
     // 始终滚动到顶部

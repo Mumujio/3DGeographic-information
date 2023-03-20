@@ -13,7 +13,7 @@
   <canvas ref="webgl"></canvas>
   <sceneClick :clickScene="option.clickScene"></sceneClick>
   <loaded :progress="option.progress"></loaded>
-  <div class="tip" v-if="!option.clickScene">请双击查看各大洲详细情况</div>
+  <div class="tip" v-if="!option.clickScene">可以双击地球各大洲进入</div>
   <!-- <shortcutContent></shortcutContent> -->
 </template>
 

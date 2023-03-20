@@ -1,6 +1,11 @@
 <template>
   <div class="shortcutContent">
-    <a-menu mode="vertical" theme="dark" @click="menuClick">
+    <a-menu
+      mode="vertical"
+      theme="dark"
+      @click="menuClick"
+      triggerSubMenuAction="click"
+    >
       <a-sub-menu key="sub1">
         <template #icon><GlobalOutlined /></template>
         <template #title>七大洲详情</template>
@@ -12,9 +17,9 @@
         <a-menu-item key="6">大洋洲 Oceania</a-menu-item>
         <a-menu-item key="7">南极洲 Antarctica</a-menu-item>
       </a-sub-menu>
-      <a-sub-menu key="sub2">
+      <!-- <a-sub-menu key="sub2">
         <template #icon> <MenuFoldOutlined /></template>
-        <template #title>大洲数据展示</template>
+        <template #title>数字世界</template>
         <a-menu-item key="8">亚洲 Asia</a-menu-item>
         <a-menu-item key="9">非洲 Africa</a-menu-item>
         <a-menu-item key="10">欧洲 Europe</a-menu-item>
@@ -22,8 +27,12 @@
         <a-menu-item key="12">南美洲 SouthAmerica</a-menu-item>
         <a-menu-item key="13">大洋洲 Oceania</a-menu-item>
         <a-menu-item key="14">南极洲 Antarctica</a-menu-item>
-      </a-sub-menu>
-      <a-menu-item key="15">
+      </a-sub-menu> -->
+      <a-menu-item key="8">
+        <template #icon> <MenuFoldOutlined /></template>
+        <span>数字世界</span>
+      </a-menu-item>
+      <a-menu-item key="9">
         <template #icon><CaretLeftOutlined /></template>
         <span>首页</span>
       </a-menu-item>
@@ -55,11 +64,12 @@ function menuClick(item) {
   } else if (item.key == 7) {
     router.push("/scene/antarctica");
   } else if (item.key == 8) {
+    router.push("/scene/numberWord");
   } else if (item.key == 9) {
+    router.push("/");
   } else if (item.key == 10) {
   } else if (item.key == 11) {
   } else if (item.key == 12) {
-    router.push("/");
   }
 }
 </script>
@@ -68,7 +78,8 @@ function menuClick(item) {
   z-index: 0;
   position: fixed;
   right: 1%;
-  bottom: 1%;
+  // bottom: 1%;
+  top:50%
   // width: 6%;
 }
 </style>

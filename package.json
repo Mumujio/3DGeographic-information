@@ -12,6 +12,7 @@
     "@types/three": "^0.144.0",
     "ant-design-vue": "^3.2.13",
     "core-js": "^3.8.3",
+    "echarts": "^5.4.1",
     "fullpage.js": "^4.0.19",
     "gsap": "^3.11.3",
     "lil-gui": "^0.17.0",
