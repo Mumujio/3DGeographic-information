@@ -385,7 +385,7 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: url("@/views/scene_SouthAmerica/img/photo1.jpg");
+    background-image: url("@/views/scene_Antarctica/img/photo1.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -398,7 +398,7 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: url("@/views/scene_SouthAmerica/img/photo2.jpg");
+    background-image: url("@/views/scene_Antarctica/img/photo2.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -412,7 +412,7 @@ watch(ratio, (newValue, oldValue) => {
     z-index: -1;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url("@/views/scene_SouthAmerica/img/photo3.jpg");
+    background-image: url("@/views/scene_Antarctica/img/photo3.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -427,7 +427,7 @@ watch(ratio, (newValue, oldValue) => {
     z-index: -1;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url("@/views/scene_SouthAmerica/img/photo3.jpg");
+    background-image: url("@/views/scene_Antarctica/img/photo4.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }

@@ -5,10 +5,12 @@
         class="section-Aleft"
         :class="{ section_hidden: hideen_flag.section1 }"
       >
-        <h2>南美洲地形</h2>
+        <h2>非洲地形</h2>
         <h2>South America</h2>
         <p>
-          南美洲的地形特征可以分为东西两部分，西部安第斯山脉贯穿南北,而东部呈平原高原间隔分布特征。南美洲的西侧，地处美洲板块和南极洲板块(又称小板块)之间的消亡边界，板块之间相互碰撞挤压，从而形成了巨大的海岸山脉,在南美洲西侧靠近太平洋沿海形成了巨大的安第斯山脉。
+          非洲地形以高原为主，地面起伏不大，被称为“高原大陆”。平均海拔600米以上，地势由东南向西北倾斜。北部为撒哈拉沙漠，东部由北向南依次是埃塞俄比亚高原、东非高原、南非高原，中部赤道附近西部刚果盆地。非洲大部分地区位于南北回归线之间，全年高温地区的面积广大，有“热带大陆”之称。境内降水较少，仅刚果盆地和几内亚湾沿岸一带年平均降水量在1500
+          毫米以上，年平均降水量在500 毫米以下的地区占全洲面积50
+          %。刚果盆地和几内亚湾沿岸一带属热带雨林气候。
         </p>
       </div>
       <div class="cover"></div>
@@ -26,10 +28,11 @@
         class="section-Aleft"
         :class="{ section_hidden: hideen_flag.section2 }"
       >
-        <h2>南美洲气候</h2>
+        <h2>非洲气候</h2>
         <p>
-          南美洲的气候特点是温暖湿润，以热带为主，大陆性不显著南美洲气候特征是在大陆位置、形状、地形、洋流,大气环流等地带性因素和非地带性因素共同作用下形成的。
-          1、位置和大陆形状南美洲位于北纬12和南纬56之间,南北延伸约68纬度,但大陆北宽南窄,略呈三角形。
+          非洲的气候特点：气温高，干燥地区广，气候带呈明显对称分布，有“热带大陆”之称
+          非洲气候类型的形成原因无非是：纬度因素、海陆因素、地形因素、洋流因素等共同作用的结果。非洲的气候类型呈明显的带状分布，而且南北大致对称。北非以热带沙漠气候为主，年降水量多在200毫米以下；撒哈拉以南的非洲以热带草原和热带雨林气候为主，大部分地区的降水量在1
+          000毫米以上。
         </p>
       </div>
       <div class="cover"></div>
@@ -44,10 +47,14 @@
         class="section-Aleft"
         :class="{ section_hidden: hideen_flag.section3 }"
       >
-        <h2>凯门鳄</h2>
+        <h2>非洲狮</h2>
         <p>
-          南美洲位于美洲南部，南美洲动植物种类繁多，南美洲的野生栖息地拥有地球生物多样性的很大一部分，其中南美洲的十大珍稀动物,如凯门鳄;
-          凯门鳄是短吻鳄科凯门鳄属动物的统称，属于中小型鳄鱼，它们和短吻鳄有亲缘关系，是像蜥蜴一样的两栖肉食动物;
+          非洲狮（学名：Panthera
+          leo，别称：万兽之王、草原之王），猫科豹属动物，是现存最大的猫科动物之一，被列入《世界自然保护联盟濒危物种红色名录》。
+          非洲狮主要分布于非洲草原，颜色以浅黄棕色为多。雄性长有很长的鬃毛，一直延伸到肩部和胸部。雌狮体重大致相当于雄狮的一半。四肢非常的强壮，它们的爪子也很宽。
+          主要生活于草原和开阔的丛林地区或半沙漠地带。
+          好合群，没有固定的巢穴，过着流浪式的生活。
+          雌雄狮子之间，外形差别很大，雄狮的颈部和肩部都披着长长的鬃毛，十分威武，雌狮却是不长鬃毛，个头比雄狮小些。
         </p>
       </div>
       <div class="cover"></div>
@@ -354,7 +361,7 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: url("@/views/scene_SouthAmerica/img/photo1.jpg");
+    background-image: url("@/views/scene_Africa/img/photo1.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -367,7 +374,7 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: url("@/views/scene_SouthAmerica/img/photo2.jpg");
+    background-image: url("@/views/scene_Africa/img/photo2.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -381,7 +388,7 @@ watch(ratio, (newValue, oldValue) => {
     z-index: -1;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url("@/views/scene_SouthAmerica/img/photo3.jpg");
+    background-image: url("@/views/scene_Africa/img/photo3.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }

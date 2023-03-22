@@ -5,10 +5,11 @@
         class="section-Aleft"
         :class="{ section_hidden: hideen_flag.section1 }"
       >
-        <h2>南美洲地形</h2>
+        <h2>亚洲地形</h2>
         <h2>South America</h2>
         <p>
-          南美洲的地形特征可以分为东西两部分，西部安第斯山脉贯穿南北,而东部呈平原高原间隔分布特征。南美洲的西侧，地处美洲板块和南极洲板块(又称小板块)之间的消亡边界，板块之间相互碰撞挤压，从而形成了巨大的海岸山脉,在南美洲西侧靠近太平洋沿海形成了巨大的安第斯山脉。
+          亚洲地形复杂多样，主要以高原、山地为主，亚洲的地势特点是中部高、四周低，亚洲是世界上除南极洲以外平均海拔最高的大洲；亚洲地面起伏大，高低悬殊。
+          亚洲的地势很高、地表起伏极大，中间高、周围低，隆起与凹陷相间，东部有一列纵长的岛弧。亚洲既有世界上最高的高原（青藏高原）、山脉（喜马拉雅山脉）和山峰（珠穆朗玛峰）；又有世界上著名的平原（西西伯利亚平原）和最地的洼地（死海）。
         </p>
       </div>
       <div class="cover"></div>
@@ -26,10 +27,11 @@
         class="section-Aleft"
         :class="{ section_hidden: hideen_flag.section2 }"
       >
-        <h2>南美洲气候</h2>
+        <h2>亚洲气候</h2>
         <p>
-          南美洲的气候特点是温暖湿润，以热带为主，大陆性不显著南美洲气候特征是在大陆位置、形状、地形、洋流,大气环流等地带性因素和非地带性因素共同作用下形成的。
-          1、位置和大陆形状南美洲位于北纬12和南纬56之间,南北延伸约68纬度,但大陆北宽南窄,略呈三角形。
+          气候类型复杂多样。世界上的气候类型中，除了温带海洋性气候、热带草原气候外，其他气候类型在亚洲都有分布。亚洲气候复杂多样，与亚跨纬度广有关。热带、温带和寒带都有，形成了热带、温带和寒带气候。
+          季风气候显著。亚洲东部、东南部和南部沿海、近海地区形成了典型的季风气候。
+          温带大陆性气候分布广泛。亚洲内陆地区，距离海洋遥远，加之山地阻挡，海洋水汽难以到达，空气干燥，形成典型的温带大陆性气候。
         </p>
       </div>
       <div class="cover"></div>
@@ -44,10 +46,11 @@
         class="section-Aleft"
         :class="{ section_hidden: hideen_flag.section3 }"
       >
-        <h2>凯门鳄</h2>
+        <h2>熊猫</h2>
         <p>
-          南美洲位于美洲南部，南美洲动植物种类繁多，南美洲的野生栖息地拥有地球生物多样性的很大一部分，其中南美洲的十大珍稀动物,如凯门鳄;
-          凯门鳄是短吻鳄科凯门鳄属动物的统称，属于中小型鳄鱼，它们和短吻鳄有亲缘关系，是像蜥蜴一样的两栖肉食动物;
+          1、体型肥硕似熊，但头圆尾短，头部和身体毛色黑白相间分明。
+          2、分布范围：只限于我国长江上游向青藏高原过渡的高山深谷地带，包括秦岭，岷山、邛崃山、大小相岭和大小凉山等山系。它们活动的区域多在坳沟、山腹洼地、河谷阶地等，一般在20°以下的缓坡地形。
+          3、大熊猫的食谱非常特殊，几乎包括了在高山地区可以找到的各种竹子，大熊猫也偶尔食肉。大熊猫独特的食物特性使它被当地人称作"竹熊"。
         </p>
       </div>
       <div class="cover"></div>
@@ -62,10 +65,10 @@
         class="section-Aleft"
         :class="{ section_hidden: hideen_flag.section4 }"
       >
-        <h2>凯门鳄</h2>
+        <h2>银杏</h2>
         <p>
-          南美洲位于美洲南部，南美洲动植物种类繁多，南美洲的野生栖息地拥有地球生物多样性的很大一部分，其中南美洲的十大珍稀动物,如凯门鳄;
-          凯门鳄是短吻鳄科凯门鳄属动物的统称，属于中小型鳄鱼，它们和短吻鳄有亲缘关系，是像蜥蜴一样的两栖肉食动物;
+          银杏（学名：Ginkgo biloba
+          L.）是银杏科、银杏属植物。乔木，高达40米，胸径可达4米；幼树树皮浅纵裂，大树之皮呈灰褐色，深纵裂，粗糙；幼年及壮年树冠圆锥形，老则广卵形。叶扇形，有长柄，淡绿色，无毛，有多数叉状并列细脉，顶端宽5-8厘米，在短枝上常具波状缺刻，在长枝上常2裂，基部宽楔形。球花雌雄异株，单性，生于短枝顶端的鳞片状叶的腋内，呈簇生状；雄球花葇荑花序状，下垂。种子具长梗，下垂，常为椭圆形、长倒卵形、卵圆形或近圆球形状。
         </p>
       </div>
       <div class="cover"></div>
@@ -385,7 +388,7 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: url("@/views/scene_SouthAmerica/img/photo1.jpg");
+    background-image: url("@/views/scene_Asia/img/photo1.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -398,7 +401,7 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: url("@/views/scene_SouthAmerica/img/photo2.jpg");
+    background-image: url("@/views/scene_Asia/img/photo2.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -410,9 +413,7 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-image: url("@/views/scene_SouthAmerica/img/photo3.jpg");
+    background-image: url("@/views/scene_Asia/img/photo3.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
@@ -425,9 +426,7 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-image: url("@/views/scene_SouthAmerica/img/photo3.jpg");
+    background-image: url("@/views/scene_Asia/img/photo4.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
