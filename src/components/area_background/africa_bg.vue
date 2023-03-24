@@ -9,8 +9,7 @@
         <h2>South America</h2>
         <p>
           非洲地形以高原为主，地面起伏不大，被称为“高原大陆”。平均海拔600米以上，地势由东南向西北倾斜。北部为撒哈拉沙漠，东部由北向南依次是埃塞俄比亚高原、东非高原、南非高原，中部赤道附近西部刚果盆地。非洲大部分地区位于南北回归线之间，全年高温地区的面积广大，有“热带大陆”之称。境内降水较少，仅刚果盆地和几内亚湾沿岸一带年平均降水量在1500
-          毫米以上，年平均降水量在500 毫米以下的地区占全洲面积50
-          %。刚果盆地和几内亚湾沿岸一带属热带雨林气候。
+          毫米以上，年平均降水量在500 毫米以下的地区占全洲面积50 %。
         </p>
       </div>
       <div class="cover"></div>
@@ -75,33 +74,34 @@
     <!-- 撒哈拉沙漠 -->
     <div style="position: absolute; top: -150px; left: 200px">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
+        style="cursor: pointer; font-size: 40px"
         @click="click_label('t-1')"
-        ><PlusCircleOutlined></PlusCircleOutlined
-      ></a-space>
+      >
+        <clickSvg></clickSvg>
+      </a-space>
     </div>
     <!-- 埃塞俄比亚高原 -->
     <div style="position: absolute; left: 540px; top: -50px">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
+        style="cursor: pointer; font-size: 40px"
         @click="click_label('t-2')"
-        ><PlusCircleOutlined></PlusCircleOutlined
+        ><clickSvg></clickSvg
       ></a-space>
     </div>
     <!-- 刚果盆地 -->
     <div style="position: absolute; left: 350px; top: 60px">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
+        style="cursor: pointer; font-size: 40px"
         @click="click_label('t-3')"
-        ><PlusCircleOutlined></PlusCircleOutlined
+        ><clickSvg></clickSvg
       ></a-space>
     </div>
     <!-- 南非高原 -->
     <div style="position: absolute; left: 380px; top: 300px">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
+        style="cursor: pointer; font-size: 40px"
         @click="click_label('t-4')"
-        ><PlusCircleOutlined></PlusCircleOutlined
+        ><clickSvg></clickSvg
       ></a-space>
     </div>
   </section>
@@ -118,11 +118,9 @@
         <p>各种气候的图例及数据</p>
       </template>
       <div style="position: absolute; top: 150px; left: -20px">
-        <a-space
-          style="background-color: #fff; cursor: pointer; font-size: 40px"
-          @click="click_label"
-          ><PlusCircleOutlined></PlusCircleOutlined
-        ></a-space>
+        <a-space style="cursor: pointer; font-size: 40px" @click="click_label">
+          <PlayCircleTwoTone></PlayCircleTwoTone>
+        </a-space>
       </div>
     </a-popover>
   </section>
@@ -134,10 +132,8 @@
     class="lion"
   >
     <div style="position: absolute">
-      <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="click_label"
-        ><PlusCircleOutlined></PlusCircleOutlined
+      <a-space style="cursor: pointer; font-size: 40px" @click="click_label"
+        ><PlayCircleTwoTone></PlayCircleTwoTone
       ></a-space>
     </div>
   </section>
@@ -152,7 +148,8 @@
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
 import { tag, labelRenderer, tagtest } from "@/utils/threejs/label/tag2D.js";
-import { PlusCircleOutlined } from "@ant-design/icons-vue";
+import { PlayCircleTwoTone } from "@ant-design/icons-vue";
+import clickSvg from "@/components/clickSvg.vue";
 
 // import fullpage from "fullpage.js";
 const props = defineProps({
@@ -186,22 +183,26 @@ function click_label(flag) {
     // 撒哈拉沙漠
     modal_data.img = "./static/img/africa/t-1.jpg";
     modal_data.name = "撒哈拉沙漠";
-    modal_data.text = "这是撒哈拉沙漠";
+    modal_data.text =
+      "撒哈拉沙漠（Sahara Desert）形成于约250万年前，是世界最大的沙质荒漠，面积约932万平方千米，位于非洲北部。该地区气候条件非常恶劣，是地球上最不适合生物生存的地方之一。“撒哈拉”是阿拉伯语的音译，在阿拉伯语中“撒哈拉”为大沙漠，源自当地游牧民族图阿雷格人的语言，原意即为“大荒漠”";
   } else if (flag == "t-2") {
     // 埃塞俄比亚高原
-    modal_data.img = "./static/img/logo.png";
+    modal_data.img = "./static/img/africa/t-2.png";
     modal_data.name = "埃塞俄比亚高原";
-    modal_data.text = "这是埃塞俄比亚高原";
+    modal_data.text =
+      "埃塞俄比亚高原在东非埃塞俄比亚境内，又叫阿比西尼亚高原，是一个平均海拔2500～3000米、在古老地层上覆盖广大玄武岩的波状高原。高原上耸立着一座座海拔超过4000米的火山山峰，显得十分宏伟壮丽，为非洲地势最高处，有非洲“屋脊”之称。面积约80多万平方千米，非洲重要农业区，世界咖啡原产地。还特产苔麸、努格（油菊）、葛须等。";
   } else if (flag == "t-3") {
     // 刚果盆地
-    modal_data.img = "./static/img/logo.png";
+    modal_data.img = "./static/img/africa/t-3.jpg";
     modal_data.name = "刚果盆地";
-    modal_data.text = "这是刚果盆地";
+    modal_data.text =
+      "刚果盆地(英语：Congo Basin；斯瓦希里语：Bonde la Kongo；法语：Bassin du Congo)，非洲最大盆地，属于世界十大盆地（曾称为世界最大盆地），又称扎伊尔盆地。位于非洲中西部，呈方形，赤道横贯中部。面积约337万平方千米 [1]  。位于下几内亚高原、南非高原、东非高原及低小的阿赞德高原之间，位于喀麦隆、中非共和国、刚果民主共和国、赤道几内亚、加蓬和刚果共和国。";
   } else if (flag == "t-4") {
     // 南非高原
-    modal_data.img = "./static/img/logo.png";
+    modal_data.img = "./static/img/africa/t-4.jpg";
     modal_data.name = "南非高原";
-    modal_data.text = "这是南非高原";
+    modal_data.text =
+      "南非高原，是非洲最大的高原，位于刚果盆地南缘和赞比西河以南。地势比前两个高原低，只在边缘部分有较高的山地。高原东南边缘的德拉肯斯堡山脉绵延1000多公里，山脉东南坡的悬崖峭壁俯视着辽阔的印度洋。";
   }
 
   visible.value = true;
