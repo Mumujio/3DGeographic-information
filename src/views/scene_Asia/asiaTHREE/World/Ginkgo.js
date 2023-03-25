@@ -10,6 +10,8 @@ export default class Ginkgo{
     setModel() {
         this.model = this.resources.items['ginkgoModel']
         this.model.scene.rotation.x = Math.PI/5
+        this.model.scene.scale.set(0.7, 0.7, 0.7)
+        this.model.scene.position.x = 0.6
         this.scene.add(this.model.scene)
     }
 }

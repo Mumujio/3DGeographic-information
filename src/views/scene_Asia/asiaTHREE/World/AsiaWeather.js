@@ -9,8 +9,9 @@ export default class AsiaWeather{
     }
     setModel() {
         this.model = this.resources.items['AsiaWeatherModel']
-        this.model.scene.scale.set(0.2, 0.2, 0.2)
-        this.model.scene.rotation.x = Math.PI / 8
+        this.model.scene.scale.set(0.15, 0.15, 0.15)
+        this.model.scene.rotation.x = Math.PI / 4
+        this.model.scene.position.x = 0.5
         
         this.scene.add(this.model.scene)
     }

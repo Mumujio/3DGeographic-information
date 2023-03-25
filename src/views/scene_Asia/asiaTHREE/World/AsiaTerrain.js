@@ -9,12 +9,13 @@ export default class AsiaTerrain{
     }
     setModel() {
         this.model = this.resources.items['AsiaTerrainModel']
-        this.model.scene.rotation.x = Math.PI / 3
-       
+        this.model.scene.rotation.x = Math.PI / 6
+        // this.model.scene.
         // this.model.scene.rotateY( Math.PI / 3)
-        // this.model.scene.rotation.y = Math.PI
-        this.model.scene.scale.set(1.2,1.2,1.2)
-        this.model.scene.position.x = -1
+        this.model.scene.rotation.y =7* Math.PI/6
+        this.model.scene.scale.set(1.3,1.3,1.3)
+        this.model.scene.position.x = 1.5
+
         this.scene.add(this.model.scene)
     }
 }

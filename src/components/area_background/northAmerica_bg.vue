@@ -137,9 +137,15 @@ onMounted(() => {
   sizes.on("resize", () => {
     // 判断使用哪个sections的渲染器
     if (props.newSection == 0) {
-      tLabelRenderer.render(scene, camera.instance);
+      tLabelRenderer.setSize(
+        window.innerWidth,
+        document.querySelector(".section1").scrollHeight
+      );
     } else if (props.newSection == 1) {
-      wtLabelRenderer.render(scene, camera.instance);
+      wtLabelRenderer.setSize(
+        window.innerWidth,
+        document.querySelector(".section2").scrollHeight
+      );
     }
   });
 });
@@ -217,8 +223,9 @@ watch(ratio, (newValue, oldValue) => {
     top: 0;
     z-index: -1;
     background-image: url("@/views/scene_NorthAmerica/img/photo1.jpg");
-    // background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    // background-repeat: no-repeat;
+    // background-size: contain;
   }
 }
 
@@ -229,9 +236,8 @@ watch(ratio, (newValue, oldValue) => {
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: url("@/views/scene_NorthAmerica/img/photo1.jpg");
+    background-image: url("@/views/scene_NorthAmerica/img/photo2.jpg");
     background-size: 100% 100%;
-    background-repeat: no-repeat;
   }
 }
 

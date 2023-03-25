@@ -5,15 +5,16 @@
       :title="modal_data.name"
       :footer="null"
       :maskClosable="false"
+      :centered="true"
       @cancel="cancel"
       class="my-modal"
       :getContainer="() => $refs.modal"
     >
       <a-spin :spinning="spinning">
-        <img :src="modal_data.img" alt="" @load="loadImg"
+        <img :src="modal_data.img || ''" alt="" @load="loadImg"
       /></a-spin>
 
-      <p>{{ modal_data.text }}</p>
+      <p>{{ modal_data.text || "" }}</p>
     </a-modal>
   </div>
 </template>

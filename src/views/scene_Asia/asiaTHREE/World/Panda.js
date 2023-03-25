@@ -10,7 +10,8 @@ export default class Panda{
     setModel() {
         this.model = this.resources.items['pandaModel']
         this.model.scene.scale.set(0.3, 0.3, 0.3)
-        this.model.scene.position.x = 0.8
+        this.model.scene.position.x = 1
+        this.model.scene.rotation.y = -Math.PI/5
         this.scene.add(this.model.scene)
     }
 }

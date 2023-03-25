@@ -6,10 +6,9 @@
         :class="{ section_hidden: hideen_flag.section1 }"
       >
         <h2>亚洲地形</h2>
-        <h2>South America</h2>
+        <h2>Asia</h2>
         <p>
-          亚洲地形复杂多样，主要以高原、山地为主，亚洲的地势特点是中部高、四周低，亚洲是世界上除南极洲以外平均海拔最高的大洲；亚洲地面起伏大，高低悬殊。
-          亚洲的地势很高、地表起伏极大，中间高、周围低，隆起与凹陷相间，东部有一列纵长的岛弧。亚洲既有世界上最高的高原（青藏高原）、山脉（喜马拉雅山脉）和山峰（珠穆朗玛峰）；又有世界上著名的平原（西西伯利亚平原）和最地的洼地（死海）。
+          亚洲地形复杂多样，主要以高原、山地为主，亚洲的地势特点是中部高、四周低，亚洲是世界上除南极洲以外平均海拔最高的大洲；亚洲地面起伏大，高低悬殊。亚洲的地势很高、地表起伏极大，中间高、周围低，隆起与凹陷相间，东部有一列纵长的岛弧。
         </p>
       </div>
       <div class="cover"></div>
@@ -47,11 +46,9 @@
         class="section-Aleft"
         :class="{ section_hidden: hideen_flag.section3 }"
       >
-        <h2>熊猫</h2>
+        <h2>大熊猫</h2>
         <p>
-          1、体型肥硕似熊，但头圆尾短，头部和身体毛色黑白相间分明。
-          2、分布范围：只限于我国长江上游向青藏高原过渡的高山深谷地带，包括秦岭，岷山、邛崃山、大小相岭和大小凉山等山系。它们活动的区域多在坳沟、山腹洼地、河谷阶地等，一般在20°以下的缓坡地形。
-          3、大熊猫的食谱非常特殊，几乎包括了在高山地区可以找到的各种竹子，大熊猫也偶尔食肉。大熊猫独特的食物特性使它被当地人称作"竹熊"。
+          体型肥硕似熊，但头圆尾短，头部和身体毛色黑白相间分明。只限于我国长江上游向青藏高原过渡的高山深谷地带，包括秦岭，岷山、邛崃山、大小相岭和大小凉山等山系。大熊猫的食谱非常特殊，几乎包括了在高山地区可以找到的各种竹子，大熊猫也偶尔食肉。大熊猫独特的食物特性使它被当地人称作"竹熊"。
         </p>
       </div>
       <div class="cover"></div>
@@ -69,7 +66,7 @@
         <h2>银杏</h2>
         <p>
           银杏（学名：Ginkgo biloba
-          L.）是银杏科、银杏属植物。乔木，高达40米，胸径可达4米；幼树树皮浅纵裂，大树之皮呈灰褐色，深纵裂，粗糙；幼年及壮年树冠圆锥形，老则广卵形。叶扇形，有长柄，淡绿色，无毛，有多数叉状并列细脉，顶端宽5-8厘米，在短枝上常具波状缺刻，在长枝上常2裂，基部宽楔形。球花雌雄异株，单性，生于短枝顶端的鳞片状叶的腋内，呈簇生状；雄球花葇荑花序状，下垂。种子具长梗，下垂，常为椭圆形、长倒卵形、卵圆形或近圆球形状。
+          L.）是银杏科、银杏属植物。乔木，高达40米，胸径可达4米；幼树树皮浅纵裂，大树之皮呈灰褐色，深纵裂，粗糙；幼年及壮年树冠圆锥形，老则广卵形。叶扇形，有长柄，淡绿色，无毛，有多数叉状并列细脉，顶端宽5-8厘米，在短枝上常具波状缺刻，在长枝上常2裂，基部宽楔形。
         </p>
       </div>
       <div class="cover"></div>
@@ -87,19 +84,26 @@
     class="terrain"
     :class="{ section_hidden: hideen_flag.terrain }"
   >
-    <div style="position: absolute">
+    <div style="position: absolute; left: 20px">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="testClick"
-        ><PlusCircleOutlined></PlusCircleOutlined
+        style="cursor: pointer; font-size: 40px"
+        @click="click_label('t-1')"
+        ><clickSvg></clickSvg
       ></a-space>
     </div>
 
-    <div style="position: absolute; left: 80px">
+    <div style="position: absolute; left: 80px; top: -120px">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="testClick"
-        ><PlusCircleOutlined></PlusCircleOutlined
+        style="cursor: pointer; font-size: 40px"
+        @click="click_label('t-2')"
+        ><clickSvg></clickSvg
+      ></a-space>
+    </div>
+    <div style="position: absolute; left: 300px; top: 20px">
+      <a-space
+        style="cursor: pointer; font-size: 40px"
+        @click="click_label('t-3')"
+        ><clickSvg></clickSvg
       ></a-space>
     </div>
   </section>
@@ -113,19 +117,17 @@
   >
     <div style="position: absolute">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="testClick"
-        ><PlusCircleOutlined></PlusCircleOutlined
+        style="cursor: pointer; font-size: 40px"
+        @click="click_label('w-1')"
+        ><PlayCircleTwoTone></PlayCircleTwoTone
       ></a-space>
     </div>
 
-    <div style="position: absolute; left: 80px">
-      <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="testClick"
-        ><PlusCircleOutlined></PlusCircleOutlined
+    <!-- <div style="position: absolute; left: 80px">
+      <a-space style="cursor: pointer; font-size: 40px" @click="click_label"
+        ><PlayCircleTwoTone></PlayCircleTwoTone
       ></a-space>
-    </div>
+    </div> -->
   </section>
   <!-- 熊猫label -->
   <section
@@ -136,17 +138,17 @@
   >
     <div style="position: absolute">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="testClick"
-        ><PlusCircleOutlined></PlusCircleOutlined
+        style="cursor: pointer; font-size: 40px"
+        @click="click_label('p-1')"
+        ><PlayCircleTwoTone></PlayCircleTwoTone
       ></a-space>
     </div>
 
     <div style="position: absolute; left: 80px">
       <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="testClick"
-        ><PlusCircleOutlined></PlusCircleOutlined
+        style="cursor: pointer; font-size: 40px"
+        @click="click_label('p-2')"
+        ><PlayCircleTwoTone></PlayCircleTwoTone
       ></a-space>
     </div>
   </section>
@@ -157,35 +159,64 @@
     :class="{ section_hidden: hideen_flag.ginkgo }"
     class="ginkgo"
   >
-    <div style="position: absolute">
-      <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="testClick"
-        ><PlusCircleOutlined></PlusCircleOutlined
-      ></a-space>
-    </div>
+    <a-popover title="银杏叶" placement="left">
+      <template #content>
+        <img
+          src="../../../public/static/img/asia/g-1.png"
+          alt=""
+          style="max-width: 20vw"
+        />
+      </template>
+      <div style="position: absolute">
+        <a-space
+          style="cursor: pointer; font-size: 40px"
+          @click="click_label('g-1')"
+          ><PlayCircleTwoTone></PlayCircleTwoTone
+        ></a-space>
+      </div>
+    </a-popover>
 
     <div style="position: absolute; left: 80px">
-      <a-space
-        style="background-color: #fff; cursor: pointer; font-size: 40px"
-        @click="testClick"
-        ><PlusCircleOutlined></PlusCircleOutlined
+      <a-space style="cursor: pointer; font-size: 40px" @click="click_label"
+        ><PlayCircleTwoTone></PlayCircleTwoTone
       ></a-space>
     </div>
   </section>
 
   <!-- 弹窗 -->
-  <a-modal v-model:visible="visible" title="Basic Modal" @ok="visible = false">
-    <p>Some contents...</p>
-    <p>Some contents...</p>
-    <p>Some contents...</p>
-  </a-modal>
+  <label_Amodel v-model:visible="visible" v-model:modal_data="modal_data">
+  </label_Amodel>
+
+  <label_chart
+    v-if="visible1"
+    v-model:visible="visible1"
+    :option="{
+      title: {
+        text: 'ECharts 入门示例',
+      },
+      tooltip: {},
+      legend: {
+        data: ['销量'],
+      },
+      xAxis: {
+        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+      },
+      yAxis: {},
+      series: [
+        {
+          name: '销量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20],
+        },
+      ],
+    }"
+  ></label_chart>
 </template>
 
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
 import { tag, labelRenderer, tagtest } from "@/utils/threejs/label/tag2D.js";
-import { PlusCircleOutlined } from "@ant-design/icons-vue";
+import { PlayCircleTwoTone } from "@ant-design/icons-vue";
 
 const props = defineProps({
   newSection: 0,
@@ -198,7 +229,13 @@ const weather_label = ref(null);
 const panda_label = ref(null);
 const ginkgo_label = ref(null);
 const visible = ref(false);
+const visible1 = ref(false);
 let ratio = ref(0);
+const modal_data = reactive({
+  img: "",
+  name: "",
+  text: "",
+});
 
 const hideen_flag = reactive({
   section1: false,
@@ -210,8 +247,52 @@ const hideen_flag = reactive({
   ginkgo: true,
   panda: true,
 });
-function testClick() {
-  visible.value = true;
+function click_label(flag) {
+  if (flag == "t-1") {
+    // 青藏高原
+    visible.value = true;
+    modal_data.img = "./static/img/asia/t-1.png";
+    modal_data.name = "青藏高原";
+    modal_data.text =
+      "青藏高原（Qinghai-Tibet Plateau）是中国最大、世界海拔最高的高原，也是中华民族的源头地之一和中华文明的发祥地之一，占全中国23%面积，被誉为“世界屋脊”“第三极”。";
+  } else if (flag == "t-2") {
+    // 喜马拉雅山
+    visible.value = true;
+    modal_data.img = "./static/img/asia/t-2.png";
+    modal_data.name = "喜马拉雅山";
+    modal_data.text =
+      "喜马拉雅山脉（梵语：hima alaya，意为雪域），藏语意为“雪的故乡”，是世界海拔最高的山脉[1]，是东亚大陆与南亚次大陆的天然界山，也是中国与印度、尼泊尔、不丹、巴基斯坦等国的天然国界。其位于青藏高原南巅边缘，西起克什米尔的南迦-帕尔巴特峰(海拔8125米)，东至雅鲁藏布江大拐弯处的南迦巴瓦峰(海拔7782米)。";
+  } else if (flag == "t-3") {
+    // 西西伯利亚平原
+    visible.value = true;
+    modal_data.img = "./static/img/asia/t-3.png";
+    modal_data.name = "西西伯利亚平原";
+    modal_data.text =
+      "西西伯利亚平原（Western Siberian Plain）位于俄罗斯境内，是亚洲第一大平原，世界第三大平原。它南北长2000千米，东西宽1500千米，面积260万平方千米。它自北而南平行分布着苔原、森林、森林草原、草原景观，具有典型的纬度地带性分布规律，大部分地区为亚寒带针叶林所覆盖。著名景点有叶尼塞河、鄂毕河等。";
+  } else if (flag == "w-1") {
+    // 天气
+    visible.value = true;
+    modal_data.img = "./static/img/asia/w-1.png";
+    modal_data.name = "亚洲气候简介";
+    modal_data.text =
+      "气候类型复杂多样。世界上的气候类型中，除了温带海洋性气候、热带草原气候外，其他气候类型在亚洲都有分布。亚洲气候复杂多样，与亚跨纬度广有关。热带、温带和寒带都有，形成了热带、温带和寒带气候。季风气候显著。亚洲东部、东南部和南部沿海、近海地区形成了典型的季风气候。温带大陆性气候分布广泛。亚洲内陆地区，距离海洋遥远，加之山地阻挡，海洋水汽难以到达，空气干燥，形成典型的温带大陆性气候。";
+  } else if (flag == "p-1") {
+    // 大熊猫
+    visible.value = true;
+    modal_data.img = "./static/img/asia/p-1.png";
+    modal_data.name = "大熊猫";
+    modal_data.text =
+      "1、体型肥硕似熊，但头圆尾短，头部和身体毛色黑白相间分明。2、分布范围：只限于我国长江上游向青藏高原过渡的高山深谷地带，包括秦岭，岷山、邛崃山、大小相岭和大小凉山等山系。它们活动的区域多在坳沟、山腹洼地、河谷阶地等，一般在20°以下的缓坡地形。3、大熊猫的食谱非常特殊，几乎包括了在高山地区可以找到的各种竹子，大熊猫也偶尔食肉。大熊猫独特的食物特性使它被当地人称作'竹熊'。";
+  } else if (flag == "p-2") {
+    // 大熊猫
+
+    visible1.value = true;
+  } else if (flag == "g-1") {
+    // 银杏叶
+    visible.value = true;
+    modal_data.img = "./static/img/asia/g-1.png";
+    modal_data.name = "银杏叶";
+  }
 }
 
 onMounted(() => {
@@ -368,9 +449,10 @@ watch(ratio, (newValue, oldValue) => {
     height: 100%;
     margin-left: 71px;
     max-width: 543px;
+    overflow: hidden;
     h2 {
       color: rgba(0, 0, 0, 1);
-      font-size: 72px;
+      font-size: 60px;
       font-weight: 700;
     }
     p {
