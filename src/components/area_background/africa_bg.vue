@@ -27,10 +27,7 @@
         :class="{ section_hidden: hideen_flag.section2 }"
       >
         <h2>非洲气候</h2>
-        <p>
-          非洲的气候特点：气温高，干燥地区广，气候带呈明显对称分布，有“热带大陆”之称
-          非洲气候类型的形成原因无非是：纬度因素、海陆因素、地形因素、洋流因素等共同作用的结果。非洲的气候类型呈明显的带状分布，而且南北大致对称。
-        </p>
+        <img src="@/assets/img/legend/africa.png" alt="" />
       </div>
       <div class="cover"></div>
       <img
@@ -122,7 +119,7 @@
         style="cursor: pointer; font-size: 40px"
         @click="click_label('w-2')"
       >
-        <PlayCircleTwoTone></PlayCircleTwoTone>
+        <chartSvg></chartSvg>
       </a-space>
     </div>
     <div style="position: absolute; top: 150px">
@@ -130,7 +127,7 @@
         style="cursor: pointer; font-size: 40px"
         @click="click_label('w-3')"
       >
-        <PlayCircleTwoTone></PlayCircleTwoTone>
+        <chartSvg></chartSvg>
       </a-space>
     </div>
   </section>
@@ -141,18 +138,18 @@
     :class="{ section_hidden: hideen_flag.lion }"
     class="lion"
   >
-    <div style="position: absolute">
+    <!-- <div style="position: absolute">
       <a-space
         style="cursor: pointer; font-size: 40px"
         @click="click_label('l-1')"
-        ><PlayCircleTwoTone></PlayCircleTwoTone
+        ><clickSvg></clickSvg
       ></a-space>
-    </div>
-    <div style="position: absolute">
+    </div> -->
+    <div style="position: absolute; left: 100px">
       <a-space
         style="cursor: pointer; font-size: 40px"
-        @click="click_label('l-2')"
-        ><PlayCircleTwoTone></PlayCircleTwoTone
+        @click="click_label('l-1')"
+        ><chartSvg></chartSvg
       ></a-space>
     </div>
   </section>
@@ -163,7 +160,7 @@
     v-model:modal_data="modal_data"
   ></label_Amodel>
 
-  <!-- 天气饼状图 -->
+  <!-- 图表弹窗 -->
   <label_chart
     v-if="visible1"
     v-model:visible="visible1"
@@ -173,9 +170,7 @@
 
 <script setup>
 import { ref, onMounted, watch, reactive } from "vue";
-import { tag, labelRenderer, tagtest } from "@/utils/threejs/label/tag2D.js";
-import { PlayCircleTwoTone } from "@ant-design/icons-vue";
-import clickSvg from "@/components/clickSvg.vue";
+import { labelRenderer, tagtest } from "@/utils/threejs/label/tag2D.js";
 
 // import fullpage from "fullpage.js";
 const props = defineProps({
@@ -372,12 +367,84 @@ function click_label(flag) {
 
     visible1.value = true;
   } else if (flag == "l-1") {
-    // 狮子图文
-
-    visible1.value = true;
-  } else if (flag == "l-2") {
     // 狮子数据图表
-
+    chart.option = {
+      xAxis: {
+        type: "category",
+        boundaryGap: false,
+        data: [
+          "2011年",
+          "2012年",
+          "2013年",
+          "2014年",
+          "2015年",
+          "2016年",
+          "2017年",
+          "2018年",
+          "2019年",
+          "2020年",
+        ],
+      },
+      yAxis: {
+        type: "value",
+        boundaryGap: [0, "30%"],
+      },
+      visualMap: {
+        type: "piecewise",
+        show: false,
+        dimension: 0,
+        seriesIndex: 0,
+        pieces: [
+          {
+            gt: 1,
+            lt: 3,
+            color: "rgba(0, 0, 180, 0.4)",
+          },
+          {
+            gt: 5,
+            lt: 7,
+            color: "rgba(0, 0, 180, 0.4)",
+          },
+        ],
+      },
+      series: [
+        {
+          type: "line",
+          smooth: 0.6,
+          symbol: "none",
+          lineStyle: {
+            color: "#5470C6",
+            width: 5,
+          },
+          markLine: {
+            symbol: ["none", "none"],
+            label: { show: false },
+            data: [{ xAxis: 1 }, { xAxis: 3 }, { xAxis: 5 }, { xAxis: 7 }],
+          },
+          areaStyle: {},
+          data: [
+            23050, 21020, 30300, 23030, 20200, 35463, 20023, 24023, 22466,
+            24366,
+          ],
+        },
+      ],
+      title: {
+        text: "非洲狮2011-2020估算种群数量",
+        left: "center",
+      },
+      tooltip: {
+        trigger: "item",
+      },
+      legend: {
+        orient: "vertical",
+        left: "left",
+        textStyle: {
+          fontSize: (18 * window.innerWidth) / 1920,
+          fontWeight: 400,
+          padding: [0, 0, 0, 10],
+        },
+      },
+    };
     visible1.value = true;
   }
 }

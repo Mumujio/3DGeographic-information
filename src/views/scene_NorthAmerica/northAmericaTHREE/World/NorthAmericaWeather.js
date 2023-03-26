@@ -11,6 +11,9 @@ export default class NorthAmericaWeather {
     
     this.model.scene.scale.set(0.2,0.2,0.2)
     this.model.scene.rotation.x = Math.PI / 5;
+    this.model.scene.position.x = 0.5
+    // this.model.scene.children[0].position.x= 2
+    
 
 
      

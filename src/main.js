@@ -10,13 +10,15 @@ import 'ant-design-vue/dist/antd.css';
 import label_Amodel from '@/components/label_a_model.vue'
 import label_chart from "@/components/label_charts.vue";
 import clickSvg from "@/components/clickSvg.vue";
-
+import chartSvg from '@/components/chartSvg.vue'
 import '@/utils/rem'
 
 const app = createApp(App)
 // 注册全局组件
 app.component('label_Amodel', label_Amodel)
 app.component('label_chart', label_chart)
-app.component('clickSvg',clickSvg)
+app.component('clickSvg', clickSvg)
+app.component('chartSvg', chartSvg)
+
 
 app.use(store).use(router).use(Antd).mount('#app')

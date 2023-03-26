@@ -27,11 +27,6 @@
         :class="{ section_hidden: hideen_flag.section2 }"
       >
         <h2>亚洲气候</h2>
-        <!-- <p>
-          气候类型复杂多样。世界上的气候类型中，除了温带海洋性气候、热带草原气候外，其他气候类型在亚洲都有分布。亚洲气候复杂多样，与亚跨纬度广有关。热带、温带和寒带都有，形成了热带、温带和寒带气候。
-          季风气候显著。亚洲东部、东南部和南部沿海、近海地区形成了典型的季风气候。
-          温带大陆性气候分布广泛。亚洲内陆地区，距离海洋遥远，加之山地阻挡，海洋水汽难以到达，空气干燥，形成典型的温带大陆性气候。
-        </p> -->
         <img src="@/assets/img/legend/asia.png" alt="" />
       </div>
       <div class="cover"></div>
@@ -92,14 +87,14 @@
       ></a-space>
     </div>
 
-    <div style="position: absolute; left: 80px; top: -120px">
+    <div style="position: absolute; left: 80px; top: -90px">
       <a-space
         style="cursor: pointer; font-size: 40px"
         @click="click_label('t-2')"
         ><clickSvg></clickSvg
       ></a-space>
     </div>
-    <div style="position: absolute; left: 300px; top: 20px">
+    <div style="position: absolute; left: 250px; top: 20px">
       <a-space
         style="cursor: pointer; font-size: 40px"
         @click="click_label('t-3')"
@@ -115,19 +110,30 @@
     :class="{ section_hidden: hideen_flag.weather }"
     class="weather"
   >
-    <div style="position: absolute">
+    <div style="position: absolute; top: 150px; left: -120px">
       <a-space
         style="cursor: pointer; font-size: 40px"
         @click="click_label('w-1')"
-        ><PlayCircleTwoTone></PlayCircleTwoTone
-      ></a-space>
+      >
+        <clickSvg></clickSvg>
+      </a-space>
     </div>
-
-    <!-- <div style="position: absolute; left: 80px">
-      <a-space style="cursor: pointer; font-size: 40px" @click="click_label"
-        ><PlayCircleTwoTone></PlayCircleTwoTone
-      ></a-space>
-    </div> -->
+    <div style="position: absolute">
+      <a-space
+        style="cursor: pointer; font-size: 40px"
+        @click="click_label('w-2')"
+      >
+        <chartSvg></chartSvg>
+      </a-space>
+    </div>
+    <div style="position: absolute; top: 150px">
+      <a-space
+        style="cursor: pointer; font-size: 40px"
+        @click="click_label('w-3')"
+      >
+        <chartSvg></chartSvg>
+      </a-space>
+    </div>
   </section>
   <!-- 熊猫label -->
   <section
@@ -136,19 +142,11 @@
     :class="{ section_hidden: hideen_flag.panda }"
     class="panda"
   >
-    <div style="position: absolute">
+    <div style="position: absolute; left: 100px">
       <a-space
         style="cursor: pointer; font-size: 40px"
         @click="click_label('p-1')"
-        ><PlayCircleTwoTone></PlayCircleTwoTone
-      ></a-space>
-    </div>
-
-    <div style="position: absolute; left: 80px">
-      <a-space
-        style="cursor: pointer; font-size: 40px"
-        @click="click_label('p-2')"
-        ><PlayCircleTwoTone></PlayCircleTwoTone
+        ><chartSvg></chartSvg
       ></a-space>
     </div>
   </section>
@@ -159,7 +157,7 @@
     :class="{ section_hidden: hideen_flag.ginkgo }"
     class="ginkgo"
   >
-    <a-popover title="银杏叶" placement="left">
+    <!-- <a-popover title="银杏叶" placement="left">
       <template #content>
         <img
           src="../../../public/static/img/asia/g-1.png"
@@ -174,42 +172,20 @@
           ><PlayCircleTwoTone></PlayCircleTwoTone
         ></a-space>
       </div>
-    </a-popover>
-
-    <div style="position: absolute; left: 80px">
-      <a-space style="cursor: pointer; font-size: 40px" @click="click_label"
-        ><PlayCircleTwoTone></PlayCircleTwoTone
-      ></a-space>
-    </div>
+    </a-popover> -->
   </section>
 
   <!-- 弹窗 -->
-  <label_Amodel v-model:visible="visible" v-model:modal_data="modal_data">
-  </label_Amodel>
+  <label_Amodel
+    v-model:visible="visible"
+    v-model:modal_data="modal_data"
+  ></label_Amodel>
 
+  <!-- 图表弹窗 -->
   <label_chart
     v-if="visible1"
     v-model:visible="visible1"
-    :option="{
-      title: {
-        text: 'ECharts 入门示例',
-      },
-      tooltip: {},
-      legend: {
-        data: ['销量'],
-      },
-      xAxis: {
-        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
-      },
-      yAxis: {},
-      series: [
-        {
-          name: '销量',
-          type: 'bar',
-          data: [5, 20, 36, 10, 10, 20],
-        },
-      ],
-    }"
+    :option="chart.option"
   ></label_chart>
 </template>
 
@@ -231,6 +207,9 @@ const ginkgo_label = ref(null);
 const visible = ref(false);
 const visible1 = ref(false);
 let ratio = ref(0);
+let chart = reactive({
+  option: {},
+});
 const modal_data = reactive({
   img: "",
   name: "",
@@ -251,14 +230,14 @@ function click_label(flag) {
   if (flag == "t-1") {
     // 青藏高原
     visible.value = true;
-    modal_data.img = "./static/img/asia/t-1.png";
+    modal_data.img = "./static/img/asia/t-2.png";
     modal_data.name = "青藏高原";
     modal_data.text =
       "青藏高原（Qinghai-Tibet Plateau）是中国最大、世界海拔最高的高原，也是中华民族的源头地之一和中华文明的发祥地之一，占全中国23%面积，被誉为“世界屋脊”“第三极”。";
   } else if (flag == "t-2") {
     // 喜马拉雅山
     visible.value = true;
-    modal_data.img = "./static/img/asia/t-2.png";
+    modal_data.img = "./static/img/asia/t-1.png";
     modal_data.name = "喜马拉雅山";
     modal_data.text =
       "喜马拉雅山脉（梵语：hima alaya，意为雪域），藏语意为“雪的故乡”，是世界海拔最高的山脉[1]，是东亚大陆与南亚次大陆的天然界山，也是中国与印度、尼泊尔、不丹、巴基斯坦等国的天然国界。其位于青藏高原南巅边缘，西起克什米尔的南迦-帕尔巴特峰(海拔8125米)，东至雅鲁藏布江大拐弯处的南迦巴瓦峰(海拔7782米)。";
@@ -276,23 +255,217 @@ function click_label(flag) {
     modal_data.name = "亚洲气候简介";
     modal_data.text =
       "气候类型复杂多样。世界上的气候类型中，除了温带海洋性气候、热带草原气候外，其他气候类型在亚洲都有分布。亚洲气候复杂多样，与亚跨纬度广有关。热带、温带和寒带都有，形成了热带、温带和寒带气候。季风气候显著。亚洲东部、东南部和南部沿海、近海地区形成了典型的季风气候。温带大陆性气候分布广泛。亚洲内陆地区，距离海洋遥远，加之山地阻挡，海洋水汽难以到达，空气干燥，形成典型的温带大陆性气候。";
-  } else if (flag == "p-1") {
-    // 大熊猫
-    visible.value = true;
-    modal_data.img = "./static/img/asia/p-1.png";
-    modal_data.name = "大熊猫";
-    modal_data.text =
-      "1、体型肥硕似熊，但头圆尾短，头部和身体毛色黑白相间分明。2、分布范围：只限于我国长江上游向青藏高原过渡的高山深谷地带，包括秦岭，岷山、邛崃山、大小相岭和大小凉山等山系。它们活动的区域多在坳沟、山腹洼地、河谷阶地等，一般在20°以下的缓坡地形。3、大熊猫的食谱非常特殊，几乎包括了在高山地区可以找到的各种竹子，大熊猫也偶尔食肉。大熊猫独特的食物特性使它被当地人称作'竹熊'。";
-  } else if (flag == "p-2") {
-    // 大熊猫
+  } else if (flag == "w-2") {
+    // 天气饼图
+    chart.option = {
+      title: {
+        text: "亚洲各气候比例",
+        left: "center",
+      },
+      tooltip: {
+        trigger: "item",
+      },
+      legend: {
+        orient: "vertical",
+        left: "left",
+        textStyle: {
+          fontSize: (18 * window.innerWidth) / 1920,
+          fontWeight: 400,
+          padding: [0, 0, 0, 10],
+        },
+      },
+      series: [
+        {
+          name: "Access From",
+          type: "pie",
+          radius: "50%",
+          right: 0,
+          data: [
+            { value: 6, name: "热带雨林气候" },
+            { value: 2, name: "热带草原气候" },
+            { value: 1, name: "热带沙漠气候" },
+            { value: 10, name: "温带海洋性气候" },
+            { value: 11, name: "温带大陆性气候" },
+            { value: 4, name: "地中海气候" },
+            { value: 13, name: "亚热带湿润气候" },
+            { value: 18, name: "半干旱气候" },
+          ],
+          emphasis: {
+            itemStyle: {
+              fontSize: (18 * window.innerWidth) / 1920,
+              shadowBlur: 10,
+              shadowOffsetX: 0,
+              shadowColor: "rgba(0, 0, 0, 0.5)",
+            },
+          },
+        },
+      ],
+      grid: {
+        right: 0,
+      },
+    };
+    visible1.value = true;
+  } else if (flag == "w-3") {
+    // 人口总数
+    chart.option = {
+      xAxis: {
+        type: "category",
+        boundaryGap: false,
+      },
+      yAxis: {
+        type: "value",
+        boundaryGap: [0, "30%"],
+      },
+      visualMap: {
+        type: "piecewise",
+        show: false,
+        dimension: 0,
+        seriesIndex: 0,
+        pieces: [
+          {
+            gt: 1,
+            lt: 3,
+            color: "rgba(0, 0, 180, 0.4)",
+          },
+          {
+            gt: 5,
+            lt: 7,
+            color: "rgba(0, 0, 180, 0.4)",
+          },
+        ],
+      },
+      series: [
+        {
+          type: "line",
+          smooth: 0.6,
+          symbol: "none",
+          lineStyle: {
+            color: "#5470C6",
+            width: 5,
+          },
+          markLine: {
+            symbol: ["none", "none"],
+            label: { show: false },
+            data: [{ xAxis: 1 }, { xAxis: 3 }, { xAxis: 5 }, { xAxis: 7 }],
+          },
+          areaStyle: {},
+          data: [
+            ["2012年", 41.36],
+            ["2013年", 41.77],
+            ["2014年", 42.17],
+            ["2015年", 42.57],
+            ["2016年", 42.97],
+            ["2017年", 43.36],
+            ["2018年", 43.74],
+            ["2019年", 44.1],
+            ["2020年", 44.45],
+            ["2021年", 44.8],
+          ],
+        },
+      ],
+      title: {
+        text: "亚洲近十年人口总数变化",
+        left: "center",
+      },
+      tooltip: {
+        trigger: "item",
+      },
+      legend: {
+        orient: "vertical",
+        left: "left",
+        textStyle: {
+          fontSize: (18 * window.innerWidth) / 1920,
+          fontWeight: 400,
+          padding: [0, 0, 0, 10],
+        },
+      },
+    };
 
     visible1.value = true;
-  } else if (flag == "g-1") {
-    // 银杏叶
-    visible.value = true;
-    modal_data.img = "./static/img/asia/g-1.png";
-    modal_data.name = "银杏叶";
+  } else if (flag == "p-1") {
+    // 熊猫数据图表
+    chart.option = {
+      xAxis: {
+        type: "category",
+        boundaryGap: false,
+        data: [
+          "2012年",
+          "2013年",
+          "2014年",
+          "2014年",
+          "2015年",
+          "2016年",
+          "2017年",
+          "2018年",
+          "2019年",
+          "2020年",
+        ],
+      },
+      yAxis: {
+        type: "value",
+        boundaryGap: [0, "30%"],
+      },
+      visualMap: {
+        type: "piecewise",
+        show: false,
+        dimension: 0,
+        seriesIndex: 0,
+        pieces: [
+          {
+            gt: 1,
+            lt: 3,
+            color: "rgba(0, 0, 180, 0.4)",
+          },
+          {
+            gt: 5,
+            lt: 7,
+            color: "rgba(0, 0, 180, 0.4)",
+          },
+        ],
+      },
+      series: [
+        {
+          type: "line",
+          smooth: 0.6,
+          symbol: "none",
+          lineStyle: {
+            color: "#5470C6",
+            width: 5,
+          },
+          markLine: {
+            symbol: ["none", "none"],
+            label: { show: false },
+            data: [{ xAxis: 1 }, { xAxis: 3 }, { xAxis: 5 }, { xAxis: 7 }],
+          },
+          areaStyle: {},
+          data: [1023, 1200, 1430, 1530, 1700, 1745, 1800, 1823, 1864, 1950],
+        },
+      ],
+      title: {
+        text: "大熊猫2011-2020估算种群数量",
+        left: "center",
+      },
+      tooltip: {
+        trigger: "item",
+      },
+      legend: {
+        orient: "vertical",
+        left: "left",
+        textStyle: {
+          fontSize: (18 * window.innerWidth) / 1920,
+          fontWeight: 400,
+          padding: [0, 0, 0, 10],
+        },
+      },
+    };
+    visible1.value = true;
   }
+  // else if (flag == "g-1") {
+  //   // 银杏叶
+  //   visible.value = true;
+  //   modal_data.img = "./static/img/asia/g-1.png";
+  //   modal_data.name = "银杏叶";
+  // }
 }
 
 onMounted(() => {
