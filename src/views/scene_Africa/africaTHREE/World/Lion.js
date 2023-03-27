@@ -10,7 +10,7 @@ export default class Lion{
     setModel() {
         this.model = this.resources.items['lionModel']
         this.model.scene.scale.set(0.7, 0.7, 0.7)
-        this.model.scene.position.set(0.5, 1, 0)
+        this.model.scene.position.set(0.5, 3, 0)
        
 
         this.scene.add(this.model.scene)

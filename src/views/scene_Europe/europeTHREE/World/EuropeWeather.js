@@ -10,8 +10,9 @@ export default class EuropeWeather{
     }
     setModel() {
         this.model = this.resources.items['EuropeWeatherModel']
-        this.model.scene.rotation.x = Math.PI / 5
-        this.model.scene.scale.set(0.4,0.4,0.4)
+        this.model.scene.rotation.x = Math.PI / 4
+        this.model.scene.scale.set(0.38, 0.38, 0.38)
+        this.model.scene.position.x = 1.1
 
         this.scene.add(this.model.scene)
     }

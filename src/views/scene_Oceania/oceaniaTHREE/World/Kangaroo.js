@@ -10,7 +10,8 @@ export default class Kangaroo{
         this.model = this.resources.items['kangarooModel']
         this.model.scene.rotation.y =- Math.PI / 5
         this.model.scene.position.x = 1
-        // this.model.scene.scale.set(1.5,1.5,1.5)
+        this.model.scene.children[0].position.y = -0.5
+        this.model.scene.scale.set(1.2,1.2,1.2)
         this.scene.add(this.model.scene)
     }
 }

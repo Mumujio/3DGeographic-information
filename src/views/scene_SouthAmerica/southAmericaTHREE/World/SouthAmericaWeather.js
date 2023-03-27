@@ -12,7 +12,8 @@ export default class SouthAmericaWeather{
         this.model = this.resources.items['SouthAmericaWeatherModel']
         this.model.scene.rotation.x = Math.PI / 3
         this.model.scene.scale.set(0.2, 0.2, 0.2)
-
+        this.model.scene.position.x = 0.4
+        this.model.scene.position.y = 0.4
         this.scene.add(this.model.scene)
     }
 }

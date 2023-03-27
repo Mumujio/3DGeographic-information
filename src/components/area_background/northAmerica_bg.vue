@@ -12,11 +12,6 @@
         </p>
       </div>
       <div class="cover"></div>
-      <img
-        src="@/assets/img/logo.png"
-        alt=""
-        style="position: absolute; top: 0; right: 0"
-      />
     </section>
     <section class="section section2">
       <div
@@ -27,11 +22,6 @@
         <img src="@/assets/img/legend/northAmerica.png" alt="" />
       </div>
       <div class="cover"></div>
-      <img
-        src="@/assets/img/logo.png"
-        alt=""
-        style="position: absolute; top: 0; right: 0"
-      />
     </section>
   </div>
   <!-- 地形label -->
@@ -110,6 +100,11 @@
     v-model:visible="visible1"
     :option="chart.option"
   ></label_chart>
+
+  <!-- 返回键 -->
+  <div style="position: fixed; top: 2%; right: 2%; cursor: pointer">
+    <returnSvg></returnSvg>
+  </div>
 </template>
 
 <script setup>
@@ -351,7 +346,7 @@ watch(ratio, (newValue, oldValue) => {
   if (newValue < 0.1) {
     hideen_flag.terrain = false;
     hideen_flag.weather = true;
-  } else if (newValue >= 0.1 && newValue < 0.9) {
+  } else if (newValue >= 0.1 && newValue < 0.8) {
     hideen_flag.terrain = true;
     hideen_flag.weather = true;
   } else {

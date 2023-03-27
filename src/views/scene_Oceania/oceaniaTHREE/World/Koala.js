@@ -8,9 +8,10 @@ export default class Koala{
     }
     setModel() {
         this.model = this.resources.items['koalaModel']
-        this.model.scene.rotation.y =- Math.PI / 5
+        this.model.scene.rotation.y =Math.PI / 10
         this.model.scene.position.x = 1
-        this.model.scene.scale.set(1.5,1.5,1.5)
+        this.model.scene.scale.set(2, 2, 2)
+        this.model.scene.children[0].position.y = -0.2
         this.scene.add(this.model.scene)
     }
 }

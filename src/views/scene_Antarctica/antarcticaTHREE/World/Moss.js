@@ -9,7 +9,10 @@ export default class Moss{
     }
     setModel() {
         this.model = this.resources.items['mossModel']
-        // this.model.scene.position.y = 1
+        this.model.scene.scale.set(4, 4, 4)
+        this.model.scene.rotation.x = Math.PI / 6
+        this.model.scene.children[1].position.x = 0.3
+        this.model.scene.children[1].position.y = -0.1
         this.scene.add(this.model.scene)
     }
 }

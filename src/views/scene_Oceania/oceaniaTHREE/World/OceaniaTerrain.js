@@ -8,9 +8,10 @@ export default class OceaniaTerrain{
     }
     setModel() {
         this.model = this.resources.items['OceaniaTerrainModel']
-        this.model.scene.rotation.x = Math.PI / 5
-        this.model.scene.position.x = -3.4
-        this.model.scene.scale.set(2,2,2)
+        this.model.scene.rotation.x = Math.PI / 4
+        this.model.scene.children[0].position.x = -1.7
+        this.model.scene.children[0].position.y = 0.3
+        this.model.scene.scale.set(2.5,2.5,2.5)
         this.scene.add(this.model.scene)
     }
 }

@@ -9,6 +9,7 @@ export default class AfricaTerrain{
     setModel() {
         this.model = this.resources.items['AfricaTerrainModel']
         this.model.scene.rotation.x = Math.PI / 3
+        this.model.scene.children[0].y = 0.5
        this.model.scene.scale.set(3.5,3.5,3.5)
         this.scene.add(this.model.scene)
     }

@@ -5,7 +5,7 @@
 
     <div @click="router.push('/scene/antarctica')" class="scene-btn">
       <a-button ghost type="primary">
-        Click to view
+        点击进入 Click to view
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
@@ -15,10 +15,11 @@
     <span class="name">SouthAmerica</span>
     <div @click="router.push('/scene/southAmerica')" class="scene-btn">
       <a-button ghost type="primary">
-        Click to view
+        点击进入 Click to view
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
+
     <img src="@/assets/img/sceneClick/SouthAmerica.png" alt="" />
   </section>
   <section class="scene" v-if="clickScene == '北美洲001'">
@@ -26,7 +27,7 @@
     <span class="name">NorthAmerica</span>
     <div @click="router.push('/scene/northAmerica')" class="scene-btn">
       <a-button ghost type="primary">
-        Click to view
+        点击进入 Click to view
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
@@ -37,7 +38,7 @@
     <span class="name">Africa</span>
     <div @click="router.push('/scene/africa')" class="scene-btn">
       <a-button ghost type="primary">
-        Click to view
+        点击进入 Click to view
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
@@ -48,7 +49,7 @@
     <span class="name">Asia</span>
     <div @click="router.push('/scene/asia')" class="scene-btn">
       <a-button ghost type="primary">
-        Click to view
+        点击进入 Click to view
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
@@ -59,7 +60,7 @@
     <span class="name">Oceania</span>
     <div @click="router.push('/scene/oceania')" class="scene-btn">
       <a-button ghost type="primary">
-        Click to view
+        点击进入 Click to view
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
@@ -70,7 +71,7 @@
     <span class="name">Europe</span>
     <div @click="router.push('/scene/europe')" class="scene-btn">
       <a-button ghost type="primary">
-        Click to view
+        点击进入 Click to view
         <template #icon><EnterOutlined /></template>
       </a-button>
     </div>
@@ -95,6 +96,8 @@ const router = useRouter();
   color: white;
   display: flex;
   flex-direction: column;
+  max-height: 70vh;
+  overflow: hidden;
   h2 {
     line-height: 66px;
     color: rgba(217, 212, 212, 1);
@@ -112,9 +115,13 @@ const router = useRouter();
   &-btn {
     margin: 10px 0;
   }
+  // .imgDiv {
+  //   flex: 1;
+  // }
   img {
+    height: 0;
     // max-height: 600px;
-    max-width: 500px;
+    flex: 1;
   }
 }
 </style>

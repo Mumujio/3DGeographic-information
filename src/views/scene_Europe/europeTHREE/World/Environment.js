@@ -15,7 +15,8 @@ export default class Environment
 
     setSunLight()
     {
-  
+        let light = new THREE.AmbientLight('0x404040', 1.5)
+        this.scene.add(light)
     }
 
     setEnvironmentMap()

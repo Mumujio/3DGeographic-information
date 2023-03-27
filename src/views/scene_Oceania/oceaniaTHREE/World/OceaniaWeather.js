@@ -8,8 +8,9 @@ export default class OceaniaWeather {
   }
   setModel() {
     this.model = this.resources.items["OceaniaWeatherModel"];
-    this.model.scene.scale.set(0.8,0.8,0.8)
-    this.model.scene.rotation.x = Math.PI / 5;
+    this.model.scene.scale.set(0.7,0.7,0.7)
+    this.model.scene.rotation.x = Math.PI /4;
+    this.model.scene.position.x = 0.7
     this.scene.add(this.model.scene);
   }
 }

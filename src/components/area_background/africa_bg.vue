@@ -15,11 +15,11 @@
       <!-- <div class="event-view">
           <a-space><PlusCircleOutlined /></a-space>fwefewfefwe
         </div> -->
-      <img
+      <!-- <img
         src="@/assets/img/logo.png"
         alt=""
-        style="position: absolute; top: 0; right: 0"
-      />
+        style="position: absolute; left: 0; bottom: 0"
+      /> -->
     </section>
     <section class="section section2">
       <div
@@ -30,11 +30,11 @@
         <img src="@/assets/img/legend/africa.png" alt="" />
       </div>
       <div class="cover"></div>
-      <img
+      <!-- <img
         src="@/assets/img/logo.png"
         alt=""
         style="position: absolute; top: 0; right: 0"
-      />
+      /> -->
     </section>
     <section class="section section3">
       <div
@@ -50,11 +50,11 @@
         </p>
       </div>
       <div class="cover"></div>
-      <img
+      <!-- <img
         src="@/assets/img/logo.png"
         alt=""
         style="position: absolute; top: 0; right: 0"
-      />
+      /> -->
     </section>
   </div>
   <!-- 地形label -->
@@ -166,6 +166,11 @@
     v-model:visible="visible1"
     :option="chart.option"
   ></label_chart>
+
+  <!-- 返回键 -->
+  <div style="position: fixed; top: 2%; right: 2%; cursor: pointer">
+    <returnSvg></returnSvg>
+  </div>
 </template>
 
 <script setup>
@@ -529,11 +534,15 @@ watch(ratio, (newValue, oldValue) => {
     hideen_flag.section1 = true;
     hideen_flag.section2 = true;
     hideen_flag.section3 = true;
-  } else if (newValue >= 0.65 && newValue < 1.43) {
+  } else if (newValue >= 0.65 && newValue < 1.22) {
     hideen_flag.section1 = true;
     hideen_flag.section2 = false;
     hideen_flag.section3 = true;
-  } else if (newValue >= 1.58) {
+  } else if (newValue >= 1.22 && newValue < 1.47) {
+    hideen_flag.section1 = true;
+    hideen_flag.section2 = true;
+    hideen_flag.section3 = true;
+  } else {
     hideen_flag.section1 = true;
     hideen_flag.section2 = true;
     hideen_flag.section3 = false;
@@ -544,11 +553,11 @@ watch(ratio, (newValue, oldValue) => {
     hideen_flag.terrain = false;
     hideen_flag.weather = true;
     hideen_flag.lion = true;
-  } else if (newValue >= 0.1 && newValue < 1) {
+  } else if (newValue >= 0.1 && newValue < 0.92) {
     hideen_flag.terrain = true;
     hideen_flag.weather = true;
     hideen_flag.lion = true;
-  } else if (newValue >= 1 && newValue < 1.06) {
+  } else if (newValue >= 0.92 && newValue < 1.06) {
     hideen_flag.terrain = true;
     hideen_flag.weather = false;
     hideen_flag.lion = true;
@@ -644,5 +653,6 @@ watch(ratio, (newValue, oldValue) => {
 .lion,
 .weather {
   transition: all 0.8s;
+  color: rgb(244, 245, 207);
 }
 </style>

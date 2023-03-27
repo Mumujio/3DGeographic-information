@@ -8,8 +8,10 @@ export default class EuropeTerrain{
     }
     setModel() {
         this.model = this.resources.items['EuropeTerrainModel']
-        this.model.scene.rotation.x = Math.PI / 5
-        this.model.scene.scale.set(4,4,4)
+        this.model.scene.rotation.x = Math.PI / 4
+        this.model.scene.children[0].scale.set(1.3, 1.3, 1.3)
+        this.model.scene.children[0].position.y = 1.6
+        this.model.scene.children[0].position.x= 0.8
         this.scene.add(this.model.scene)
     }
 }

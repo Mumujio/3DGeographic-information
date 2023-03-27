@@ -12,14 +12,6 @@
         </p>
       </div>
       <div class="cover"></div>
-      <!-- <div class="event-view">
-        <a-space><PlusCircleOutlined /></a-space>fwefewfefwe
-      </div> -->
-      <img
-        src="@/assets/img/logo.png"
-        alt=""
-        style="position: absolute; top: 0; right: 0"
-      />
     </section>
     <section class="section section2">
       <div
@@ -30,11 +22,6 @@
         <img src="@/assets/img/legend/asia.png" alt="" />
       </div>
       <div class="cover"></div>
-      <img
-        src="@/assets/img/logo.png"
-        alt=""
-        style="position: absolute; top: 0; right: 0"
-      />
     </section>
     <section class="section section3">
       <div
@@ -47,11 +34,6 @@
         </p>
       </div>
       <div class="cover"></div>
-      <img
-        src="@/assets/img/logo.png"
-        alt=""
-        style="position: absolute; top: 0; right: 0"
-      />
     </section>
     <section class="section section4">
       <div
@@ -65,11 +47,6 @@
         </p>
       </div>
       <div class="cover"></div>
-      <img
-        src="@/assets/img/logo.png"
-        alt=""
-        style="position: absolute; top: 0; right: 0"
-      />
     </section>
   </div>
   <!-- 地形label -->
@@ -187,6 +164,11 @@
     v-model:visible="visible1"
     :option="chart.option"
   ></label_chart>
+
+  <!-- 返回键 -->
+  <div style="position: fixed; top: 2%; right: 2%; cursor: pointer">
+    <returnSvg></returnSvg>
+  </div>
 </template>
 
 <script setup>
@@ -570,17 +552,17 @@ watch(ratio, (newValue, oldValue) => {
     hideen_flag.weather = true;
     hideen_flag.panda = true;
     hideen_flag.ginkgo = true;
-  } else if (newValue >= 0.08 && newValue < 1) {
+  } else if (newValue >= 0.08 && newValue < 0.9) {
     hideen_flag.terrain = true;
     hideen_flag.weather = true;
     hideen_flag.panda = true;
     hideen_flag.ginkgo = true;
-  } else if (newValue >= 1 && newValue < 1.06) {
+  } else if (newValue >= 0.9 && newValue < 1.15) {
     hideen_flag.terrain = true;
     hideen_flag.weather = false;
     hideen_flag.panda = true;
     hideen_flag.ginkgo = true;
-  } else if (newValue >= 1.06 && newValue < 1.8) {
+  } else if (newValue >= 1.15 && newValue < 1.8) {
     hideen_flag.terrain = true;
     hideen_flag.weather = true;
     hideen_flag.panda = true;
