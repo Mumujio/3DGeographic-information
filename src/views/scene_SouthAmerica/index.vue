@@ -35,11 +35,8 @@ onMounted(() => {
   three.experience.scroll.on("scroll", (newSection) => {
     option.newSection = newSection;
   });
-
-  console.log();
 });
 onBeforeUnmount(() => {
-  console.log("从副页离开");
   three.experience.destroy();
   // console.log(three.experience);
 });

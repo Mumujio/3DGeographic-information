@@ -72,8 +72,6 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  console.log("从主页离开");
-
   three.experience.destroy();
   three.experience = null;
   // console.log(three.experience);

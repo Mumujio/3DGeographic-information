@@ -3,10 +3,6 @@ import Environment from "./Environment.js";
 import Earth from "./Earth.js";
 import Raycaster from "./Raycaster";
 import Galaxy from "./Galaxy.js";
-import * as THREE from "three";
-import LabelRaycaster from './labelRaycaster.js'
-import { CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer";
-import TextLine from "./TextLine.js";
 
 export default class World {
   constructor() {

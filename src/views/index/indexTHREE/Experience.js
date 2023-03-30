@@ -5,7 +5,7 @@ import Time from '@/utils/threejs/Time'
 import Camera from './Camera.js'
 import Renderer from './Renderer.js'
 import World from './World/World.js'
-import Stats from '@/utils/threejs/Stats'
+// import Stats from '@/utils/threejs/Stats'
 import Sign from '@/utils/threejs/Sign'
 import Tween from '@/utils/threejs/Tween'
 import Process from '@/utils/threejs/PostProcess.js'
@@ -30,7 +30,7 @@ export default class Experience
 
         
         // Setup
-        this.stats = new Stats(this.canvas)
+        // this.stats = new Stats(this.canvas)
 
         this.debug = new Debug()
         this.sizes = new Sizes()
@@ -74,7 +74,7 @@ export default class Experience
         this.renderer.update()
         this.tween.update()
        
-        this.stats.update()
+        // this.stats.update()
         this.process.composer.render()
         if (this.world.galaxy) {
             this.world.galaxy.update()

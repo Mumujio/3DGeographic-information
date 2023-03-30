@@ -401,7 +401,6 @@ onMounted(() => {
 });
 
 watch(ratio, (newValue, oldValue) => {
-  console.log(newValue);
   // 文本
   if (newValue < 0.3) {
     hideen_flag.section1 = false;

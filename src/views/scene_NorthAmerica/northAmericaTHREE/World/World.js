@@ -29,7 +29,7 @@ export default class World {
     this.objectsDistance = 4
     
     // 模型位置
-    console.log( this.northAmericaTerrain.model.scene);
+
     
     this.northAmericaTerrain.model.scene.position.y = -this.objectsDistance * 0
     this.northAmericaWeather.model.scene.position.y = -this.objectsDistance * 1

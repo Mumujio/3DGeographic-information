@@ -40,7 +40,7 @@ export default class Raycaster extends EventEmitter {
        
 
         this.useIntersect(this.raycaster.intersect.name);
-        console.log(intersects[0]);
+    
         
 
         this.trigger('sceneClick', [this.raycaster.intersect.name])

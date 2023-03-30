@@ -38,7 +38,6 @@ onMounted(() => {
   });
 });
 onBeforeUnmount(() => {
-  console.log("从副页离开");
   three.experience.destroy();
   // console.log(three.experience);
 });

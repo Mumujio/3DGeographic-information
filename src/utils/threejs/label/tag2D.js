@@ -20,7 +20,7 @@ export function tag(name) {
 
 export function labelRenderer(container) {
     let labelRenderer = new CSS2DRenderer();
-    console.log(container);
+
     labelRenderer.setSize(window.innerWidth, container.scrollHeight);
     labelRenderer.domElement.style.position = 'absolute';
     // 相对标签原位置位置偏移大小

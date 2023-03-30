@@ -77,7 +77,6 @@ onMounted(() => {
   // sections[0].style.display = "block";
 });
 onBeforeUnmount(() => {
-  console.log("从副页离开");
   three.experience.destroy();
   // console.log(three.experience);
 });

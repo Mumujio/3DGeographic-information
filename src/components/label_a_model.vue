@@ -41,7 +41,6 @@ const cancel = () => {
 
 const loadImg = () => {
   spinning.value = false;
-  console.log("加载完毕");
 };
 </script>
 <style scoped lang="less">

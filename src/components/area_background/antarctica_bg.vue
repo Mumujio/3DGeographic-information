@@ -173,7 +173,6 @@ const hideen_flag = reactive({
   penguin: true,
 });
 function click_label(flag) {
-  console.log(flag);
   if (flag == "t-1") {
     // 撒哈拉沙漠
     visible.value = true;
@@ -362,7 +361,6 @@ onMounted(() => {
 });
 
 watch(ratio, (newValue, oldValue) => {
-  console.log(newValue);
   // 文本
   if (newValue < 0.3) {
     hideen_flag.section1 = false;

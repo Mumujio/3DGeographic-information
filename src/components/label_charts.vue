@@ -43,7 +43,6 @@ function resize_fn() {
   }
 }
 onMounted(() => {
-  console.log(props.option);
   const chartElem = echart.value;
   setTimeout(() => {
     myChart = echarts.init(echart.value, null, {
